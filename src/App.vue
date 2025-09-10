@@ -1,8 +1,8 @@
 
 <template>
-  <Header />
-  <Main />
-  <Footer/>
+  <Header  class="headerStyle"/>
+  <Main  class="mainStyle"/>
+  <Footer class="footerStyle" />
 </template>
 
 <script setup>
