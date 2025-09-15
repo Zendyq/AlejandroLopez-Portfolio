@@ -18,6 +18,13 @@ body {
   z-index: -2;  
 }
 
+.noselect {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 
 /*Typography*/
 .weight-300 { font-weight: 300; }
@@ -59,6 +66,7 @@ body {
   position: absolute;
   left: 10%;
   width: 10%;
+  cursor: pointer;
 }
 
 .navBar{
@@ -108,6 +116,45 @@ body {
   opacity: 1;
   display: flex;
   pointer-events: auto; 
+}
+
+/* HOME */
+
+.mainContainer{
+  padding-right: 10%;
+  padding-left: 10%;
+  padding-top: 7%;
+  padding-bottom: 7%;
+  width: 100%;
+  height: 100vh;
+}
+
+.homeSchedule{
+  display: flex;
+  gap: 150px;
+}
+
+.titleHome{
+  color: white;
+  font-size: 85px;
+  width: 80%;
+  margin: 0px;
+  margin-top: 20px;
+}
+
+.subtitleHome{
+  color: #d0d0d0;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.skillsHome{
+  background: #aaaaaa;
+  width: 60%;
+  height: 100px;
+  margin-top: 150px;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 /*Mobile responsive (small)*/

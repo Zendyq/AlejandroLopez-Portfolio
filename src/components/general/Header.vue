@@ -1,6 +1,6 @@
 <template>
     <div class="mainHeader">
-        <img class="logo" src="../../assets/imgs/Logo.svg" alt="logo">
+        <img class="logo" @click="toHome" src="../../assets/imgs/Logo.svg" alt="Header logo">
         <nav class="navBar">
             <router-link class="title weight-700 link" :to="route.path" v-for="route in routes" :key="route">{{ route.name }}</router-link>
         </nav>
@@ -15,6 +15,12 @@
 <script setup>
 import { ref } from 'vue';
 import routes from '../../router/routes'
+import { useRouter } from 'vue-router';
 
 const isMenuOpen = ref(false);
+const router = useRouter();
+
+function toHome(){
+    router.push({name:'HOME'});
+}
 </script>
