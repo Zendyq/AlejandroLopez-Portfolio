@@ -157,6 +157,41 @@ body {
   border-radius: 15px;
 }
 
+.profileImgWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profileImgWrapper::before,
+.profileImgWrapper::after {
+  content: '';
+  border-radius: 100%;
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  z-index: -1;
+}
+
+.profileImgWrapper::before {
+  top: 20px;
+  right: 20px;
+  background-color: black;
+}
+
+.profileImgWrapper::after {
+  top: 10px;
+  right: 10px;
+  background-color: #f03b3c;
+  box-shadow: -5px 5px 5px rgba(240, 59, 60, 0.4);
+}
+
+.profileImg {
+  display: block;
+  position: relative;
+  filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0.4));
+  z-index: 1;
+}
+
 /*Mobile responsive (small)*/
 @media (max-width: 768px) {
   .mainHeader {
