@@ -11,7 +11,7 @@
         <h1 class="titleHome title">Alejandro López Gasco Fernández</h1>
         <p class="subtitleHome title">Full-stack developer</p>
         <div class="skillsHome">
-          <img src="" alt="Tecnologías">
+          <img v-for="tech in techsSvg" :key="tech" :src="tech" alt="Technologies">
         </div>
       </div>
     </div>
@@ -19,5 +19,12 @@
 </template>
 
 <script setup>
+import FlutterSVG from '@/assets/imgs/Flutter.svg';
+import JavaScriptSVG from '@/assets/imgs/JavaScript.svg';
+import QuasarSVG from '@/assets/imgs/Quasar.svg';
+import TailwindSVG from '@/assets/imgs/Tailwind.svg';
+import VueSVG from '@/assets/imgs/Vue.svg';
+
+const techsSvg = [TailwindSVG, VueSVG, QuasarSVG, JavaScriptSVG, FlutterSVG];
 
 </script>
