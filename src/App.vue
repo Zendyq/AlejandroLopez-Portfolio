@@ -1,14 +1,14 @@
 
 <template>
   <Header  class="headerStyle"/>
-  <Main  class="mainStyle"/>
+  <Home  class="mainStyle"/>
   <Footer class="footerStyle" />
 </template>
 
 <script setup>
 import Footer from './components/general/Footer.vue';
 import Header from './components/general/Header.vue';
-import Main from './components/general/Main.vue';
+import Home from './pages/Home.vue';
 
 </script>
 <style scoped></style>
