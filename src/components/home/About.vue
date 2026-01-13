@@ -27,10 +27,12 @@ import CoolButtons from '@/components/general/CoolButtons.vue';
 
 .firstContainer{
   flex: 7;
+  max-height: fit-content;
 }
 
 .secondContainer{
   flex: 8;
+  max-height: fit-content;
 }
 
 .aboutTitle{
