@@ -11,8 +11,10 @@ import Carrousel from '../general/Carrousel.vue';
 <style scoped>
 .projectsContainer {
  padding-top:0 ;   
+ padding-left: 0;
 }
 .projectsTitle{
     text-align: center;
+    width: 100%;
 }
 </style>

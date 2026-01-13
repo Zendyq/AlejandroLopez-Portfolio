@@ -1,7 +1,7 @@
 <template>
     <div class="slideContainer">
         <div class="video">
-            <video :src="WebConysel" 
+            <video :src="data.video" 
             autoplay
             muted
             loop
@@ -9,24 +9,22 @@
             </video>
         </div>
         <div class="content">
-            <h1 class="title titleContent">WEBS Conysel</h1>
+            <h1 class="title titleContent"> {{data.title}}</h1>
             <hr class="divider">
-            <p class="text">Development of a landpage  made with Vue 3 and a CMS built with Strapi</p>
+            <p class="text">{{data.description}}</p>
             <div class="techs">
-                <img width="75px" v-for="tech in techsSvg" :key="tech" :src="tech" alt="Technologies">
+                <img width="75px" v-for="tech in data.techs" :key="tech" :src="tech" alt="Technologies">
             </div>
         </div>
     </div>
 </template>
 <script setup>
-import FlutterSVG from '@/assets/imgs/Flutter.svg';
-import JavaScriptSVG from '@/assets/imgs/JavaScript.svg';
-import QuasarSVG from '@/assets/imgs/Quasar.svg';
-import TailwindSVG from '@/assets/imgs/Tailwind.svg';
-import VueSVG from '@/assets/imgs/Vue.svg';
-import WebConysel from '@/assets/videos/WebConysel.mp4'
-
-const techsSvg = [TailwindSVG, VueSVG, QuasarSVG, JavaScriptSVG, FlutterSVG];
+const props = defineProps({
+    data:{
+        required: true,
+        type: Object
+    }
+});
 
 </script>
 <style scoped>

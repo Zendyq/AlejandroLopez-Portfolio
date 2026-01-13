@@ -2,7 +2,7 @@
   <div class="carousel">
     <div class="carousel-track">
       <div
-        v-for="(slide, index) in slides"
+        v-for="(slide, index) in projects"
         :key="index"
         class="carousel-slide"
         :class="{
@@ -11,56 +11,50 @@
           next: index === nextIndex
         }"
       >
-      <Slide/>
-        <!--<img :src="slide" alt="slide" />-->
+      <Slide :data="slide"/>
       </div>
     </div>
-
-    <button class="prev" @click="prev">‹</button>
-    <button class="next" @click="next">›</button>
+    <Arrow orientation="Left" class="prevArrow" @click="prev"/>
+    <Arrow orientation="Right" class="nextArrow" @click="next"/>
   </div>
 </template>
 <script setup>
 import { ref, computed } from 'vue'
 import Slide from './Slide.vue'
+import Arrow from './Arrow.vue'
+import { projects } from '@/data/projects'
 
-const slides = [
-  'https://picsum.photos/id/1015/400/250',
-  'https://picsum.photos/id/1016/400/250',
-  'https://picsum.photos/id/1018/400/250',
-  'https://picsum.photos/id/1020/400/250',
-  
-]
 
 const currentIndex = ref(0)
 
 const next = () => {
-  currentIndex.value = (currentIndex.value + 1) % slides.length
+  currentIndex.value = (currentIndex.value + 1) % projects.length
 }
 
 const prev = () => {
-  currentIndex.value = (currentIndex.value - 1 + slides.length) % slides.length
+  currentIndex.value = (currentIndex.value - 1 + projects.length) % projects.length
 }
 
-const prevIndex = computed(() => (currentIndex.value - 1 + slides.length) % slides.length)
-const nextIndex = computed(() => (currentIndex.value + 1) % slides.length)
+const prevIndex = computed(() => (currentIndex.value - 1 + projects.length) % projects.length)
+const nextIndex = computed(() => (currentIndex.value + 1) % projects.length)
 </script>
 <style scoped>
 .carousel {
   position: relative;
   width: 80%;
   height: 300px;
-  margin-top: 200px;
+  margin: 200px auto 0 auto;
   perspective: 1000px;
   overflow: visible;
 }
 
 .carousel-track {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: 100%;
+    width: 95.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
 }
 
 .carousel-slide {
@@ -103,4 +97,18 @@ button {
 
 .prev { left: 10px; }
 .next { right: 10px; }
+
+.prevArrow{
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    z-index: 10;
+}
+
+.nextArrow{
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    z-index: 10;
+}
 </style>
