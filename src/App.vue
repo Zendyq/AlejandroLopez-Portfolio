@@ -2,7 +2,6 @@
 <template>
   <Header  class="headerStyle"/>
   <Home  class="mainStyle"/>
-  <Footer class="footerStyle" />
 </template>
 
 <script setup>
