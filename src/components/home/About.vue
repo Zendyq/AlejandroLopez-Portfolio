@@ -10,7 +10,7 @@
     </div>
     <div class="secondContainer">
         <img :src="BlackAndWhitePicture" width="50%" alt="black and white picture">
-        <p class="subtitleHome title cite">- "Always aiming for the most beautiful result, and always with a smile."</p>
+        <p class="subtitleHome title cite">- "Don't go to sleep without learning something new"</p>
     </div>
   </div>
 </template>
