@@ -2,13 +2,13 @@
     <div class="mainContainer noselect experienceContainer">
         <h1 class="titleHome title experienceTitle">EXPERIENCE</h1>
         <div class="experiences">
-            <ExperienceComponent  v-for="(exp,index) in 6" :key="exp" :class="colorClass(index)" :color="colorClass(index)" />
+            <ExperienceComponent v-for="(exp,index) in experiences" :key="exp" :data="exp" :class="colorClass(index)" :color="colorClass(index)" />
         </div>
     </div>
 </template>
 <script setup>
 import ExperienceComponent from '../general/ExperienceComponent.vue';
-
+import { experiences } from '@/data/experience';
 function colorClass(index) {
   const i = index + 1
 

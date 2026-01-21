@@ -3,16 +3,16 @@
         <div class="titleContainer">
             <img v-if="color == 'red'" :src="ExpIconWhite" alt="icon">
             <img v-else :src="ExpIconRed" alt="icon">
-            <h2 class="workPlace title" :class="color == 'red' ? 'redTitle' : 'whiteTitle' ">FrontEnd Developer</h2>
+            <h2 class="workPlace title" :class="color == 'red' ? 'redTitle' : 'whiteTitle' ">{{data.title}}</h2>
         </div>
-        <h3 class="company title">Con&Sel 15 S.L</h3>
+        <h3 class="company title">{{data.company}}</h3>
         <ul>
-            <div v-for="exp in 3" :key="exp" class="listContainer">
+            <div v-for="exp in data.description" :key="exp" class="listContainer">
                 <img :src="color == 'red' ?  WhiteStar : RedStar " alt="icon">
-                <p class="text" :class="color == 'red' ? 'redList' : 'whiteList' ">Comercial Webs</p>
+                <p class="text" :class="color == 'red' ? 'redList' : 'whiteList' ">{{exp}}</p>
             </div>
         </ul>
-        <p class="title date" :style="color == 'red' ? 'color:#FB9C9C' : 'color:#9E9E9E' ">2022-2025</p>
+        <p class="title date" :style="color == 'red' ? 'color:#FB9C9C' : 'color:#9E9E9E' ">{{data.date}}</p>
     </div>
 </template>
 <script setup>
@@ -20,11 +20,16 @@ import ExpIconWhite from '@/assets/icons/expIconWhite.svg'
 import ExpIconRed from '@/assets/icons/expIconRed.svg'
 import WhiteStar from '@/assets/icons/whiteStar.svg'
 import RedStar from '@/assets/icons/redStar.svg'
+
 const props = defineProps({
     color:{
         type:String,
         required: false,
         default: 'white'
+    },
+    data:{
+        required: true,
+        type: Object
     }
 });
 </script>
