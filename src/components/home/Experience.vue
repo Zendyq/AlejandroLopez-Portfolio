@@ -20,6 +20,10 @@ function colorClass(index) {
 }
 </script>
 <style scoped>
+.experienceContainer{
+    height: auto;
+}
+
 .experienceTitle{
     text-align: center;
 }
