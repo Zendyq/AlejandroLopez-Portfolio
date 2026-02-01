@@ -5,10 +5,10 @@
             <p v-if="showTooltip" class="tooltip">✓ Copiado</p>
         </div>
         <div class="infoImageContainer">
-            <img class="infoImage"  :src="LinkEdin" alt="info icon">
+            <img class="infoImage"  :src="data.img" alt="info icon">
         </div>
-        <h1 class="title infoTitle">INFO</h1>
-        <p class="title info">Alejandro Lopez Gasco</p>
+        <h1 class="title infoTitle">{{data.title}}</h1>
+        <p class="title info">{{data.info}}</p>
     </div>
 </template>
 <script setup>
@@ -26,7 +26,7 @@ const props = defineProps({
 const showTooltip = ref(false);
 
 function copyToClipboard() {
-    navigator.clipboard.writeText('hola');
+    navigator.clipboard.writeText(props.data.link);
     showTooltip.value = true;
     setTimeout(() => {
         showTooltip.value = false;
@@ -36,7 +36,7 @@ function copyToClipboard() {
 <style scoped>
 .container{
     position: relative;
-    width: 500px;
+    width: 25%;
     height: 600px;
     background: #d9d9d9;
     border-radius: 20px;
@@ -51,7 +51,7 @@ function copyToClipboard() {
 
 .infoImage{
     margin: auto;
-
+    width: 40% ;
 }
 
 .infoTitle{
