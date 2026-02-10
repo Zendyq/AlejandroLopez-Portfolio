@@ -9,7 +9,7 @@
 
       <div>
         <h1 class="titleHome title">Alejandro López Gasco Fernández</h1>
-        <p class="subtitleHome title">Full-stack developer</p>
+        <p class="subtitleHome title">Frontend Developer (Vue) | Full-stack JS</p>
         <div class="skillsHome">
           <img v-for="tech in techsSvg" :key="tech" :src="tech" alt="Technologies">
         </div>
@@ -28,3 +28,21 @@ import VueSVG from '@/assets/imgs/Vue.svg';
 const techsSvg = [TailwindSVG, VueSVG, QuasarSVG, JavaScriptSVG, FlutterSVG];
 
 </script>
+<style scoped>
+@media (max-width: 1600px) {
+  .titleHome{
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .homeSchedule{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .titleHome{
+    font-size: 3rem;
+  }
+}
+</style>
